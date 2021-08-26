@@ -1,5 +1,4 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD target/health-app.jar health-app-docker.jar 
-ENTRYPOINT ["java","-jar","/health-app-docker"]
-
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=target/*.jar
+COPY . /path/to/dir/in/image
+ENTRYPOINT ["java","-jar","/app.jar"]
